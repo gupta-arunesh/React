@@ -7,24 +7,8 @@ const ExpenseForm = (props) => {
   const [enterAmount, setEnterAmount] = useState("");
   const [enterDate, setEnterDate] = useState("");
 
-  /*
-  const [userInput, setUserInput] = useState({
-    enterTitle: "",
-    enterAmount: "",
-    enterDate: "",
-  });
-  */
-
   const titleChangeHandler = (event) => {
     setEnterTitle(event.target.value);
-    /*
-    setUserInput((prevValue) => {
-      return {
-        ...prevValue,
-        enterTitle: event.target.value,
-      };
-    });
-    */
   };
 
   const amountChangeHandler = (event) => {
@@ -43,8 +27,6 @@ const ExpenseForm = (props) => {
       amount: enterAmount,
       date: new Date(enterDate),
     };
-
-    // console.log(expenseData);
 
     props.onSaveExpenseDate(expenseData);
 
@@ -74,8 +56,8 @@ const ExpenseForm = (props) => {
           <label>Date</label>
           <input
             type="date"
-            min="2020-01-01"
-            max="2025-12-31"
+            min="2019-01-01"
+            max="2022-12-31"
             value={enterDate}
             onChange={dateChangeHandler}
           />
